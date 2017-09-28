@@ -8,6 +8,7 @@
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" href="${contextPath}/resources/img/icon.ico" type="image/x-icon">
 	<title>Image Uploader</title>
+	<link href="${contextPath}/resources/css/common.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
@@ -55,8 +56,8 @@
 	</div>
 	<!-- image grid-->
 	<div class="row">
-		<div class="col-md-4" ng-repeat="url in urls | filter:search">
-			<img src="{{url.imageUrl}}" class="img-responsive- img-thumbnail" style="width: 100%">
+		<div class="col-md-4 imgcontainer" ng-repeat="url in urls | filter:search">
+			<img src="{{url.imageUrl}}" class="img-responsive- img-thumbnail image">
 		</div>
 	</div>
 </div>

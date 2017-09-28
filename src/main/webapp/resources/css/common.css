@@ -73,5 +73,13 @@ body {
 	margin-top: 150px;
 }
 
+.image{
+	height: 33%;
+	max-height: 205px;
+}
+
+.imgcontainer{
+	text-align: center;
+}
 
 
