@@ -42,7 +42,7 @@
     		    <form id="logoutForm" method="POST" action="${contextPath}/logout">
         		    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         		</form>
-        		<h3>Hi, ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
+        		<h3>Hi, ${pageContext.request.userPrincipal.name} | <a href="" onclick="document.forms['logoutForm'].submit()">Logout</a>
         		</h3>
     		</c:if>
     </div>	
@@ -66,7 +66,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<h3>Images:</h3>
+			<h3>Image:</h3>
 			<div ng-show="displayMsg">
 				<p class="text-center">{{msg}}</p>
 			</div>
