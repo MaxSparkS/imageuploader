@@ -56,7 +56,7 @@
 	</div>
 	<!-- image grid-->
 	<div class="row">
-		<div class="col-md-4 imgcontainer" ng-repeat="url in urls | filter:search">	
+		<div class="col-md-4 col-sm-4 col-xs-4 imgcontainer" ng-repeat="url in urls | filter:search">	
 			<a href="" data-toggle="modal" data-target="#example{{$index}}">
       			<img src="{{url.imageUrl}}" class="img-responsive- img-thumbnail image">
     		</a>
