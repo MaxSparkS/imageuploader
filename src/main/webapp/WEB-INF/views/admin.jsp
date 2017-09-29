@@ -104,12 +104,15 @@
 	</div>
 </div>
 
+
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
 <script type="text/javascript" src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/script.js"></script>
+
 
 </body>
 </html>

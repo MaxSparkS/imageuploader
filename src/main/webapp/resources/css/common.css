@@ -82,4 +82,18 @@ body {
 	text-align: center;
 }
 
+.mdl{
+	top:10%;
+	max-height:1200px;
+	
+	
+	
+}
+.mdl img{
+	height: 100%;
+   	height:auto;
+    max-width: 100%;
+    max-height:750px;
+}
+
 

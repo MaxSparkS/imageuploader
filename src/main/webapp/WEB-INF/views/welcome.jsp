@@ -56,8 +56,20 @@
 	</div>
 	<!-- image grid-->
 	<div class="row">
-		<div class="col-md-4 imgcontainer" ng-repeat="url in urls | filter:search">
-			<img src="{{url.imageUrl}}" class="img-responsive- img-thumbnail image">
+		<div class="col-md-4 imgcontainer" ng-repeat="url in urls | filter:search">	
+			<a href="" data-toggle="modal" data-target="#example{{$index}}">
+      			<img src="{{url.imageUrl}}" class="img-responsive- img-thumbnail image">
+    		</a>
+
+			<div class="container">
+    			<div class="modal" id="example{{$index}}">
+        			<div class="mdl modal-content  col-md-8 col-md-offset-2">
+        				
+          				<img  src="{{url.imageUrl}}">
+          				
+        			</div>
+    			</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -68,6 +80,8 @@
 <script type="text/javascript" src="${contextPath}/resources/js/node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
 <script type="text/javascript" src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 <script type="text/javascript" src="${contextPath}/resources/js/script.js"></script>
+
+	
 
 </body>
 </html>
