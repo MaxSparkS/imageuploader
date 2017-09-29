@@ -29,13 +29,13 @@
 <body>
 	
 <div class="container">
-	<div class="col-md-1" style="top:8px">
+	<div class="col-md-1 col-sm-2 col-xs-2" style="top:8px">
 		<a href="welcome"><img src="${contextPath}/resources/img/logo.png"	style="width:100%"></a>
 	</div>
-	<div class="col-md-7 col-sm-6">
+	<div class="col-md-7 col-sm-6 col-xs-6">
 		<h3>Welcome to Image Previewer</h3>
 	</div>
-	<div class="col-md-4" style="text-align:right">
+	<div class="col-md-4 col-sm-4 col-xs-4" style="text-align:right">
 			<c:if test="${pageContext.request.userPrincipal.name != null}">
     		    <form id="logoutForm" method="POST" action="${contextPath}/logout">
         		    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -47,10 +47,10 @@
 </div>
 <div class="container" ng-controller="GalleryCtrl">
 	<div class="row" style="margin: 20px 0 40px 0">
-		<div class="col-md-6 col-md-offset-3">
+		<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
 			<input type="text" placeholder="Search photo..." class="form-control" ng-model="search">
 		</div>
-		<div class="col-md-3 text-right">
+		<div class="col-md-3 col-sm-3 col-xs-3 text-right">
 			<a href="${contextPath}/admin" class="btn btn-sm btn-primary">Add More Images</a>
 		</div>
 	</div>
