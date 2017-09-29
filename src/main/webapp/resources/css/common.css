@@ -1,6 +1,6 @@
 body {
     padding-bottom: 40px;
-    background-color: #eee;
+    background-color: #DCDCDC !important;
 }
 
 .form-signin {
@@ -75,7 +75,7 @@ body {
 
 .image{
 	height: 33%;
-	max-height: 205px;
+	max-height: 206px;
 }
 
 .imgcontainer{
@@ -84,9 +84,9 @@ body {
 
 .mdl{
 	top:10%;
-	max-height:1200px;
-	
-	
+	background-color: transparent !important;
+	box-shadow:none !important;
+	border: none !important;	
 	
 }
 .mdl img{
@@ -94,6 +94,11 @@ body {
    	height:auto;
     max-width: 100%;
     max-height:750px;
+    border: 1px solid rgb(215, 215, 215);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+.modal-backdrop.in{
+   opacity:0.9 !important;
+ }
 

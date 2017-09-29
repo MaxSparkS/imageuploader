@@ -6,13 +6,17 @@
 <html ng-app="photoUpload">
 <head>
 	<meta charset="UTF-8">
-	<link rel="shortcut icon" href="${contextPath}/resources/img/icon.ico" type="image/x-icon">
 	<title>Image Uploader</title>
-	<link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+	<link rel="shortcut icon" href="${contextPath}/resources/img/icon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="${contextPath}/resources/css/common.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+	<script>
+		$('#myModal').modal('handleUpdate')
+	</script>
+	
 	<script>
 		// Initialize Firebase
   		var config = {
@@ -62,11 +66,9 @@
     		</a>
 
 			<div class="container">
-    			<div class="modal" id="example{{$index}}">
-        			<div class="mdl modal-content  col-md-8 col-md-offset-2">
-        				
-          				<img  src="{{url.imageUrl}}">
-          				
+    			<div  class="modal fade" id="example{{$index}}">
+        			<div class="mdl modal-content col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2" data-dismiss="modal" aria-hidden="true">
+          					<img  src="{{url.imageUrl}}">
         			</div>
     			</div>
 			</div>

@@ -31,13 +31,13 @@
 </head>
 <body>
 <div class="container" style="top:0">
-	<div class="col-md-1" style="top:8px">
+	<div class="col-md-1 col-sm-2 col-xs-2" style="top:8px">
 		<a href="welcome"><img src="${contextPath}/resources/img/logo.png" style="width:100%"></a>
 	</div>
-	<div class="col-md-7">
+	<div class="col-md-6 col-sm-5 col-xs-5">
 		<h3>Welcome to Image Previewer</h3>
 	</div>
-	<div class="col-md-4" style="text-align:right">
+	<div class="col-md-4 col-sm-4 col-xs-4" style="text-align:right">
 			<c:if test="${pageContext.request.userPrincipal.name != null}">
     		    <form id="logoutForm" method="POST" action="${contextPath}/logout">
         		    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -47,8 +47,6 @@
     		</c:if>
     </div>	
 </div>
-
-
 <div class="container" ng-controller="MainCtrl">
 	<div class="row uploadbar">
 		<h2 class="text-center">Image Uploader</h2>
@@ -71,29 +69,27 @@
 				<p class="text-center">{{msg}}</p>
 			</div>
 			<div class="row" ng-repeat="file in fileList">
-				<div class="col-md-12">
+				<div>
 					<img ngf-thumbnail="file || './thumb.jpg'" width="100%">
 				</div>
-				<div class="col-md-12">
+				<div>
 					<div class="row" style="margin-top: 10px">
-						<div class="col-md-10 col-md-offset-1">
+						<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 							<input type="text" name="tags" class="form-control" placeholder="Add name here..." ng-model="nameOfFile.name">
 						</div>
-						
 					</div>
 				</div>
-
-				<div class="col-md-12" style="top:10px">
+				<div style="margin-top:10px">
 					<div class="row">
-						<div class="col-md-10 col-md-offset-1">
+						<div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
 							<input type="text" name="tags" class="form-control" placeholder="Add tags here..." ng-model="tags.name">
 						</div>
 					</div>
 				</div>
 				
-				<div class="col-md-12" style="top:10px">
+				<div style="margin-top:10px">
 					<div class="row">
-							<div class="col-md-3 col-md-offset-9" style="top:10px">
+							<div class="col-md-3 col-md-offset-9 col-sm-3 col-sm-offset-9 col-xs-4 col-xs-offset-8" style="top:10px">
 								<button class="btn btn-sm btn-success" ng-click="uploadFile(file)">Upload</button>
 								<button class="btn btn-sm btn-danger" ng-click="removeFile(file)">Delete</button>
 							</div>
