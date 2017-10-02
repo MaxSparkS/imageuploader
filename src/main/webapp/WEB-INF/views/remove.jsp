@@ -45,33 +45,52 @@
     		</c:if>
     </div>	
 </div>
-<div class="container" ng-controller="GalleryCtrl">
-	<div class="row" style="margin: 20px 0 40px 0">
-		<div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
-			<input type="text" placeholder="Search photo..." class="form-control" ng-model="search">
-		</div>
-		<div class="col-md-3 col-sm-3 col-xs-3 text-right">
-			<a href="${contextPath}/admin" class="btn btn-sm btn-primary">Add More Images</a>
-			<a href="${contextPath}/remove" class="btn btn-sm btn-success">Manage Images</a>
+
+<div class="container" ng-controller="ManageCtrl">
+	<div class="row">
+		<div class="text-center col-md-6 col-md-offset-3"><h2>Manage Images</h2></div>
+		<div class="col-md-3 text-right" style="top:20px;">
+			<a href="${contextPath}/welcome" class="btn btn-sm btn-success" >Back to Gallery</a>
 		</div>
 	</div>
-	<!-- image grid-->
 	<div class="row">
-		<div class="col-md-4 col-sm-4 col-xs-4 imgcontainer" ng-repeat="url in urls | filter:search">	
-			<a href="" data-toggle="modal" data-target="#example{{$index}}">
-      			<img src="{{url.imageUrl}}" class="img-responsive- img-thumbnail image">
-    		</a>
-
-			<div class="container">
-    			<div  class="modal fade" id="example{{$index}}">
-        			<div class="mdl modal-content col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2" data-dismiss="modal" aria-hidden="true">
-          					<img  src="{{url.imageUrl}}">
-        			</div>
-    			</div>
+		<div class="col-md-10 col-md-offset-1">
+			<div class="row">
+				<div class="col-md-2">
+					<h3 class="text-center">Image</h3>
+				</div>
+				<div class="col-md-8">
+					<h3 class="text-center">Image Name</h3>
+				</div>
+				<div class="col-md-2">
+					<h3 class="text-center">Action</h3>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-md-10 col-md-offset-1">
+			<div class="row" ng-repeat="url in urls">
+				<div class="col-md-2">
+					<h3 class="text-center">
+						<img ng-src="{{url.imageUrl}}" style="width:100%">
+					</h3>
+				</div>
+				<div class="col-md-8">
+					<div class="text-center">
+						{{url.imageName}}
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="text-center">
+						<button class="btn btn-sm btn-danger" ng-click="deleteFile(url)">Delete Image</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+
 </div>
+
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

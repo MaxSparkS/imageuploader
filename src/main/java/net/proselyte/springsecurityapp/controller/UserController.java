@@ -77,4 +77,9 @@ public class UserController {
     public String admin(Model model) {
         return "admin";
     }
+    
+    @RequestMapping(value="/remove", method=RequestMethod.GET)
+    public String remove(Model model){
+    	return "remove";
+    }
 }

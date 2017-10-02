@@ -38,7 +38,6 @@ angular.module('photoUpload', ['ngRoute', 'ngFileUpload', 'firebase'])
 		var uploadTask = storage.$put(file);
 
 		//Update progress bar
-
 		uploadTask.$progress(function(snapshot) {
 			var percentageUpload = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 			$scope.percentage = percentageUpload.toFixed(0);
@@ -46,7 +45,6 @@ angular.module('photoUpload', ['ngRoute', 'ngFileUpload', 'firebase'])
 		});
 
 		//Upload Complete 
-
 		uploadTask.$complete(function(snapshot){
 			console.log(snapshot);
 			var imageUrl = snapshot.downloadURL;
@@ -90,4 +88,29 @@ angular.module('photoUpload', ['ngRoute', 'ngFileUpload', 'firebase'])
 	var ref = firebase.database().ref('Images');
 	var urls = $firebaseArray(ref);
 	$scope.urls = urls;
+}])
+
+
+.controller('ManageCtrl', ['$scope','$firebaseArray', '$firebaseStorage', function($scope, $firebaseArray, $firebaseStorage){
+	
+	var ref = firebase.database().ref('Images');
+	var urls = $firebaseArray(ref);
+	$scope.urls = urls;
+
+	
+	$scope.deleteFile = function(url){
+		
+		//get storage reference
+		var storageRef = firebase.storage().ref('Photos/' + url.imageName)
+		var storage = $firebaseStorage(storageRef);
+		
+		//delete image
+		storage.$delete().then(function(){
+			$scope.urls.$remove(url); //remove data from database
+			console.log("Delete image successfully");
+		}).catch(function(error){
+			console.log(error.message);
+		});
+		
+	};
 }])
