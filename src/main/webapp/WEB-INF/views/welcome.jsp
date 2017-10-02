@@ -67,6 +67,11 @@
         			<div class="mdl modal-content col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2" data-dismiss="modal" aria-hidden="true">
           					<img  src="{{url.imageUrl}}">
         			</div>
+        			<div class="col-md-4 col-md-offset-4 mdl" style="top: 130px;">
+        				<a target="_self" href="{{url.imageUrl}}" download="{{url.imageName}}">
+        					<button class="btn btn-sm btn-success" >Download Image</button>
+        				</a>
+        			</div>
     			</div>
 			</div>
 		</div>
