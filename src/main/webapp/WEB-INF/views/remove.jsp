@@ -69,11 +69,21 @@
 		</div>
 		
 		<div class="col-md-10 col-md-offset-1">
-			<div class="row" ng-repeat="url in urls">
+			<div class="row imgcontainer" ng-repeat="url in urls">
 				<div class="col-md-2">
-					<h3 class="text-center">
-						<img ng-src="{{url.imageUrl}}" style="width:100%">
-					</h3>
+					<a href="" data-toggle="modal" data-target="#example{{$index}}">
+      					<img src="{{url.imageUrl}}" class="img-responsive- img-thumbnail image">
+    				</a>
+					<div class="container">
+    					<div  class="modal fade" id="example{{$index}}">
+        						<div class="mdl modal-content col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2" data-dismiss="modal" aria-hidden="true">
+          							<img  src="{{url.imageUrl}}">
+        						</div>
+        						<div class="col-md-4 col-md-offset-4 mdl" style="top: 130px;">
+        							<button class="btn btn-sm btn-danger" ng-click="deleteFile(url)" data-dismiss="modal" aria-hidden="true">Delete Image</button>
+        						</div>
+    					</div>
+					</div>
 				</div>
 				<div class="col-md-8">
 					<div class="text-center">
